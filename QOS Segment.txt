@@ -1,0 +1,311 @@
+/ip firewall mangle
+add action=mark-connection chain=forward comment=Starter-local new-connection-mark=Starter-local passthrough=yes routing-table=local src-address-list=Starter
+add action=mark-packet chain=forward comment=Starter-local connection-mark=Starter-local new-packet-mark=Starter-local passthrough=no
+add action=mark-connection chain=forward comment=Starter-global connection-mark=!Starter-local new-connection-mark=Starter-global passthrough=yes src-address-list=Starter
+add action=mark-packet chain=forward comment=Starter-global connection-mark=Starter-global new-packet-mark=Starter-global passthrough=no
+add action=mark-connection chain=forward comment=Simple-local new-connection-mark=Simple-local passthrough=yes routing-table=local src-address-list=Simple
+add action=mark-packet chain=forward comment=Simple-local connection-mark=Simple-local new-packet-mark=Simple-local passthrough=no
+add action=mark-connection chain=forward comment=Simple-global connection-mark=!Simple-local new-connection-mark=Simple-global passthrough=yes src-address-list=Simple
+add action=mark-packet chain=forward comment=Simple-global connection-mark=Simple-global new-packet-mark=Simple-global passthrough=no
+add action=mark-connection chain=forward comment=YOUTHPACK-local new-connection-mark=YOUTHPACK-local passthrough=yes routing-table=local src-address-list=YOUTHPACK
+add action=mark-packet chain=forward comment=YOUTHPACK-local connection-mark=YOUTHPACK-local new-packet-mark=YOUTHPACK-local passthrough=no
+add action=mark-connection chain=forward comment=YOUTHPACK-global connection-mark=!YOUTHPACK-local new-connection-mark=YOUTHPACK-global passthrough=yes src-address-list=YOUTHPACK
+add action=mark-packet chain=forward comment=YOUTHPACK-global connection-mark=YOUTHPACK-global new-packet-mark=YOUTHPACK-global passthrough=no
+add action=mark-connection chain=forward comment=YOUTH_PLUS-local new-connection-mark=YOUTH_PLUS-local passthrough=yes routing-table=local src-address-list=YOUTH_PLUS
+add action=mark-packet chain=forward comment=YOUTH_PLUS-local connection-mark=YOUTH_PLUS-local new-packet-mark=YOUTH_PLUS-local passthrough=no
+add action=mark-connection chain=forward comment=YOUTH_PLUS-global connection-mark=!YOUTH_PLUS-local new-connection-mark=YOUTH_PLUS-global passthrough=yes src-address-list=YOUTH_PLUS
+add action=mark-packet chain=forward comment=YOUTH_PLUS-global connection-mark=YOUTH_PLUS-global new-packet-mark=YOUTH_PLUS-global passthrough=no
+add action=mark-connection chain=forward comment=SURFER_PLUS-local new-connection-mark=SURFER_PLUS-local passthrough=yes routing-table=local src-address-list=SURFER_PLUS
+add action=mark-packet chain=forward comment=SURFER_PLUS-local connection-mark=SURFER_PLUS-local new-packet-mark=SURFER_PLUS-local passthrough=no
+add action=mark-connection chain=forward comment=SURFER_PLUS-global connection-mark=!SURFER_PLUS-local new-connection-mark=SURFER_PLUS-global passthrough=yes src-address-list=SURFER_PLUS
+add action=mark-packet chain=forward comment=SURFER_PLUS-global connection-mark=SURFER_PLUS-global new-packet-mark=SURFER_PLUS-global passthrough=no
+add action=mark-connection chain=forward comment=Chaser-local new-connection-mark=Chaser-local passthrough=yes routing-table=local src-address-list=Chaser
+add action=mark-packet chain=forward comment=Chaser-local connection-mark=Chaser-local new-packet-mark=Chaser-local passthrough=no
+add action=mark-connection chain=forward comment=Chaser-global connection-mark=!Chaser-local new-connection-mark=Chaser-global passthrough=yes src-address-list=Chaser
+add action=mark-packet chain=forward comment=Chaser-global connection-mark=Chaser-global new-packet-mark=Chaser-global passthrough=no
+add action=mark-connection chain=forward comment=Cheetah-local new-connection-mark=Cheetah-local passthrough=yes routing-table=local src-address-list=Cheetah
+add action=mark-packet chain=forward comment=Cheetah-local connection-mark=Cheetah-local new-packet-mark=Cheetah-local passthrough=no
+add action=mark-connection chain=forward comment=Cheetah-global connection-mark=!Cheetah-local new-connection-mark=Cheetah-global passthrough=yes src-address-list=Cheetah
+add action=mark-packet chain=forward comment=Cheetah-global connection-mark=Cheetah-global new-packet-mark=Cheetah-global passthrough=no
+add action=mark-connection chain=forward comment=FREELANCER-local new-connection-mark=FREELANCER-local passthrough=yes routing-table=local src-address-list=FREELANCER
+add action=mark-packet chain=forward comment=FREELANCER-local connection-mark=FREELANCER-local new-packet-mark=FREELANCER-local passthrough=no
+add action=mark-connection chain=forward comment=FREELANCER-global connection-mark=!FREELANCER-local new-connection-mark=FREELANCER-global passthrough=yes src-address-list=FREELANCER
+add action=mark-packet chain=forward comment=FREELANCER-global connection-mark=FREELANCER-global new-packet-mark=FREELANCER-global passthrough=no
+add action=mark-connection chain=forward comment=Eagle-local new-connection-mark=Eagle-local passthrough=yes routing-table=local src-address-list=Eagle
+add action=mark-packet chain=forward comment=Eagle-local connection-mark=Eagle-local new-packet-mark=Eagle-local passthrough=no
+add action=mark-connection chain=forward comment=Eagle-global connection-mark=!Eagle-local new-connection-mark=Eagle-global passthrough=yes src-address-list=Eagle
+add action=mark-packet chain=forward comment=Eagle-global connection-mark=Eagle-global new-packet-mark=Eagle-global passthrough=no
+add action=mark-connection chain=forward comment=Hawk-local new-connection-mark=Hawk-local passthrough=yes routing-table=local src-address-list=Hawk
+add action=mark-packet chain=forward comment=Hawk-local connection-mark=Hawk-local new-packet-mark=Hawk-local passthrough=no
+add action=mark-connection chain=forward comment=Hawk-global connection-mark=!Hawk-local new-connection-mark=Hawk-global passthrough=yes src-address-list=Hawk
+add action=mark-packet chain=forward comment=Hawk-global connection-mark=Hawk-global new-packet-mark=Hawk-global passthrough=no
+add action=mark-connection chain=forward comment=Falcon-local new-connection-mark=Falcon-local passthrough=yes routing-table=local src-address-list=Falcon
+add action=mark-packet chain=forward comment=Falcon-local connection-mark=Falcon-local new-packet-mark=Falcon-local passthrough=no
+add action=mark-connection chain=forward comment=Falcon-global connection-mark=!Falcon-local new-connection-mark=Falcon-global passthrough=yes src-address-list=Falcon
+add action=mark-packet chain=forward comment=Falcon-global connection-mark=Falcon-global new-packet-mark=Falcon-global passthrough=no
+add action=mark-connection chain=forward comment=Cheetah_Plus-local new-connection-mark=Cheetah_Plus-local passthrough=yes routing-table=local src-address-list=Cheetah_Plus
+add action=mark-packet chain=forward comment=Cheetah_Plus-local connection-mark=Cheetah_Plus-local new-packet-mark=Cheetah_Plus-local passthrough=no
+add action=mark-connection chain=forward comment=Cheetah_Plus-global connection-mark=!Cheetah_Plus-local new-connection-mark=Cheetah_Plus-global passthrough=yes src-address-list=Cheetah_Plus
+add action=mark-packet chain=forward comment=Cheetah_Plus-global connection-mark=Cheetah_Plus-global new-packet-mark=Cheetah_Plus-global passthrough=no
+add action=mark-connection chain=forward comment=Eagle_Plus-local new-connection-mark=Eagle_Plus-local passthrough=yes routing-table=local src-address-list=Eagle_Plus
+add action=mark-packet chain=forward comment=Eagle_Plus-local connection-mark=Eagle_Plus-local new-packet-mark=Eagle_Plus-local passthrough=no
+add action=mark-connection chain=forward comment=Eagle_Plus-global connection-mark=!Eagle_Plus-local new-connection-mark=Eagle_Plus-global passthrough=yes src-address-list=Eagle_Plus
+add action=mark-packet chain=forward comment=Eagle_Plus-global connection-mark=Eagle_Plus-global new-packet-mark=Eagle_Plus-global passthrough=no
+add action=mark-connection chain=forward comment=Hawk_Plus-local new-connection-mark=Hawk_Plus-local passthrough=yes routing-table=local src-address-list=Hawk_Plus
+add action=mark-packet chain=forward comment=Hawk_Plus-local connection-mark=Hawk_Plus-local new-packet-mark=Hawk_Plus-local passthrough=no
+add action=mark-connection chain=forward comment=Hawk_Plus-global connection-mark=!Hawk_Plus-local new-connection-mark=Hawk_Plus-global passthrough=yes src-address-list=Hawk_Plus
+add action=mark-packet chain=forward comment=Hawk_Plus-global connection-mark=Hawk_Plus-global new-packet-mark=Hawk_Plus-global passthrough=no
+add action=mark-connection chain=forward comment=Falcon_Plus-local new-connection-mark=Falcon_Plus-local passthrough=yes routing-table=local src-address-list=Falcon_Plus
+add action=mark-packet chain=forward comment=Falcon_Plus-local connection-mark=Falcon_Plus-local new-packet-mark=Falcon_Plus-local passthrough=no
+add action=mark-connection chain=forward comment=Falcon_Plus-global connection-mark=!Falcon_Plus-local new-connection-mark=Falcon_Plus-global passthrough=yes src-address-list=Falcon_Plus
+add action=mark-packet chain=forward comment=Falcon_Plus-global connection-mark=Falcon_Plus-global new-packet-mark=Falcon_Plus-global passthrough=no
+add action=mark-connection chain=forward comment=Youth_Plus_Up_Booster-local new-connection-mark=Youth_Plus_Up_Booster-local passthrough=yes routing-table=local src-address-list=Youth_Plus_Up_Booster
+add action=mark-packet chain=forward comment=Youth_Plus_Up_Booster-local connection-mark=Youth_Plus_Up_Booster-local new-packet-mark=Youth_Plus_Up_Booster-local passthrough=no
+add action=mark-connection chain=forward comment=Youth_Plus_Up_Booster-global connection-mark=!Youth_Plus_Up_Booster-local new-connection-mark=Youth_Plus_Up_Booster-global passthrough=yes src-address-list=Youth_Plus_Up_Booster
+add action=mark-packet chain=forward comment=Youth_Plus_Up_Booster-global connection-mark=Youth_Plus_Up_Booster-global new-packet-mark=Youth_Plus_Up_Booster-global passthrough=no
+add action=mark-connection chain=forward comment=Surfer_Plus_Up_Booster-local new-connection-mark=Surfer_Plus_Up_Booster-local passthrough=yes routing-table=local src-address-list=Surfer_Plus_Up_Booster
+add action=mark-packet chain=forward comment=Surfer_Plus_Up_Booster-local connection-mark=Surfer_Plus_Up_Booster-local new-packet-mark=Surfer_Plus_Up_Booster-local passthrough=no
+add action=mark-connection chain=forward comment=Surfer_Plus_Up_Booster-global connection-mark=!Surfer_Plus_Up_Booster-local new-connection-mark=Surfer_Plus_Up_Booster-global passthrough=yes src-address-list=Surfer_Plus_Up_Booster
+add action=mark-packet chain=forward comment=Surfer_Plus_Up_Booster-global connection-mark=Surfer_Plus_Up_Booster-global new-packet-mark=Surfer_Plus_Up_Booster-global passthrough=no
+add action=mark-connection chain=forward comment=Cheetah_Plus_Up_Booster-local new-connection-mark=Cheetah_Plus_Up_Booster-local passthrough=yes routing-table=local src-address-list=Cheetah_Plus_Up_Booster
+add action=mark-packet chain=forward comment=Cheetah_Plus_Up_Booster-local connection-mark=Cheetah_Plus_Up_Booster-local new-packet-mark=Cheetah_Plus_Up_Booster-local passthrough=no
+add action=mark-connection chain=forward comment=Cheetah_Plus_Up_Booster-global connection-mark=!Cheetah_Plus_Up_Booster-local new-connection-mark=Cheetah_Plus_Up_Booster-global passthrough=yes src-address-list=Cheetah_Plus_Up_Booster
+add action=mark-packet chain=forward comment=Cheetah_Plus_Up_Booster-global connection-mark=Cheetah_Plus_Up_Booster-global new-packet-mark=Cheetah_Plus_Up_Booster-global passthrough=no
+add action=mark-connection chain=forward comment=Eagle_Plus_Up_Booster-local new-connection-mark=Eagle_Plus_Up_Booster-local passthrough=yes routing-table=local src-address-list=Eagle_Plus_Up_Booster
+add action=mark-packet chain=forward comment=Eagle_Plus_Up_Booster-local connection-mark=Eagle_Plus_Up_Booster-local new-packet-mark=Eagle_Plus_Up_Booster-local passthrough=no
+add action=mark-connection chain=forward comment=Eagle_Plus_Up_Booster-global connection-mark=!Eagle_Plus_Up_Booster-local new-connection-mark=Eagle_Plus_Up_Booster-global passthrough=yes src-address-list=Eagle_Plus_Up_Booster
+add action=mark-packet chain=forward comment=Eagle_Plus_Up_Booster-global connection-mark=Eagle_Plus_Up_Booster-global new-packet-mark=Eagle_Plus_Up_Booster-global passthrough=no
+add action=mark-connection chain=forward comment=Hawk_Plus_Up_Booster-local new-connection-mark=Hawk_Plus_Up_Booster-local passthrough=yes routing-table=local src-address-list=Hawk_Plus_Up_Booster
+add action=mark-packet chain=forward comment=Hawk_Plus_Up_Booster-local connection-mark=Hawk_Plus_Up_Booster-local new-packet-mark=Hawk_Plus_Up_Booster-local passthrough=no
+add action=mark-connection chain=forward comment=Hawk_Plus_Up_Booster-global connection-mark=!Hawk_Plus_Up_Booster-local new-connection-mark=Hawk_Plus_Up_Booster-global passthrough=yes src-address-list=Hawk_Plus_Up_Booster
+add action=mark-packet chain=forward comment=Hawk_Plus_Up_Booster-global connection-mark=Hawk_Plus_Up_Booster-global new-packet-mark=Hawk_Plus_Up_Booster-global passthrough=no
+add action=mark-connection chain=forward comment=Falcon_Plus_Up_Booster-local new-connection-mark=Falcon_Plus_Up_Booster-local passthrough=yes routing-table=local src-address-list=Falcon_Plus_Up_Booster
+add action=mark-packet chain=forward comment=Falcon_Plus_Up_Booster-local connection-mark=Falcon_Plus_Up_Booster-local new-packet-mark=Falcon_Plus_Up_Booster-local passthrough=no
+add action=mark-connection chain=forward comment=Falcon_Plus_Up_Booster-global connection-mark=!Falcon_Plus_Up_Booster-local new-connection-mark=Falcon_Plus_Up_Booster-global passthrough=yes src-address-list=Falcon_Plus_Up_Booster
+add action=mark-packet chain=forward comment=Falcon_Plus_Up_Booster-global connection-mark=Falcon_Plus_Up_Booster-global new-packet-mark=Falcon_Plus_Up_Booster-global passthrough=no
+add action=mark-connection chain=forward comment=Swift-local new-connection-mark=Swift-local passthrough=yes routing-table=local src-address-list=Swift
+add action=mark-packet chain=forward comment=Swift-local connection-mark=Swift-local new-packet-mark=Swift-local passthrough=no
+add action=mark-connection chain=forward comment=Swift-global connection-mark=!Swift-local new-connection-mark=Swift-global passthrough=yes src-address-list=Swift
+add action=mark-packet chain=forward comment=Swift-global connection-mark=Swift-global new-packet-mark=Swift-global passthrough=no
+add action=mark-connection chain=forward comment=Extreme-local new-connection-mark=Extreme-local passthrough=yes routing-table=local src-address-list=Extreme
+add action=mark-packet chain=forward comment=Extreme-local connection-mark=Extreme-local new-packet-mark=Extreme-local passthrough=no
+add action=mark-connection chain=forward comment=Extreme-global connection-mark=!Extreme-local new-connection-mark=Extreme-global passthrough=yes src-address-list=Extreme
+add action=mark-packet chain=forward comment=Extreme-global connection-mark=Extreme-global new-packet-mark=Extreme-global passthrough=no
+
+
+
+
+/queue type
+add kind=pcq name=Starter-local-Upload pcq-classifier=src-address pcq-rate=15M pcq-total-limit=4G
+add kind=pcq name=Starter-local-Download pcq-classifier=dst-address pcq-rate=15M pcq-total-limit=4G
+add kind=pcq name=Starter-Upload pcq-classifier=src-address pcq-rate=5M pcq-total-limit=4G
+add kind=pcq name=Starter-Download pcq-classifier=dst-address pcq-rate=5M pcq-total-limit=4G
+add kind=pcq name=Simple-local-Upload pcq-classifier=src-address pcq-rate=20M pcq-total-limit=4G
+add kind=pcq name=Simple-local-Download pcq-classifier=dst-address pcq-rate=20M pcq-total-limit=4G
+add kind=pcq name=Simple-Upload pcq-classifier=src-address pcq-rate=7M pcq-total-limit=4G
+add kind=pcq name=Simple-Download pcq-classifier=dst-address pcq-rate=7M pcq-total-limit=4G
+add kind=pcq name=YOUTHPACK-local-Upload pcq-classifier=src-address pcq-rate=20M pcq-total-limit=4G
+add kind=pcq name=YOUTHPACK-local-Download pcq-classifier=dst-address pcq-rate=20M pcq-total-limit=4G
+add kind=pcq name=YOUTHPACK-Upload pcq-classifier=src-address pcq-rate=10M pcq-total-limit=4G
+add kind=pcq name=YOUTHPACK-Download pcq-classifier=dst-address pcq-rate=10M pcq-total-limit=4G
+add kind=pcq name=YOUTH_PLUS-local-Upload pcq-classifier=src-address pcq-rate=20M pcq-total-limit=4G
+add kind=pcq name=YOUTH_PLUS-local-Download pcq-classifier=dst-address pcq-rate=20M pcq-total-limit=4G
+add kind=pcq name=YOUTH_PLUS-Upload pcq-classifier=src-address pcq-rate=11M pcq-total-limit=4G
+add kind=pcq name=YOUTH_PLUS-Download pcq-classifier=dst-address pcq-rate=11M pcq-total-limit=4G
+add kind=pcq name=SURFER_PLUS-local-Upload pcq-classifier=src-address pcq-rate=20M pcq-total-limit=4G
+add kind=pcq name=SURFER_PLUS-local-Download pcq-classifier=dst-address pcq-rate=20M pcq-total-limit=4G
+add kind=pcq name=SURFER_PLUS-Upload pcq-classifier=src-address pcq-rate=15M pcq-total-limit=4G
+add kind=pcq name=SURFER_PLUS-Download pcq-classifier=dst-address pcq-rate=15M pcq-total-limit=4G
+add kind=pcq name=Chaser-local-Upload pcq-classifier=src-address pcq-rate=60M pcq-total-limit=4G
+add kind=pcq name=Chaser-local-Download pcq-classifier=dst-address pcq-rate=60M pcq-total-limit=4G
+add kind=pcq name=Chaser-Upload pcq-classifier=src-address pcq-rate=12M pcq-total-limit=4G
+add kind=pcq name=Chaser-Download pcq-classifier=dst-address pcq-rate=12M pcq-total-limit=4G
+add kind=pcq name=Cheetah-local-Upload pcq-classifier=src-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Cheetah-local-Download pcq-classifier=dst-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Cheetah-Upload pcq-classifier=src-address pcq-rate=20M pcq-total-limit=4G
+add kind=pcq name=Cheetah-Download pcq-classifier=dst-address pcq-rate=20M pcq-total-limit=4G
+add kind=pcq name=FREELANCER-local-Upload pcq-classifier=src-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=FREELANCER-local-Download pcq-classifier=dst-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=FREELANCER-Upload pcq-classifier=src-address pcq-rate=30M pcq-total-limit=4G
+add kind=pcq name=FREELANCER-Download pcq-classifier=dst-address pcq-rate=15M pcq-total-limit=4G
+add kind=pcq name=Eagle-local-Upload pcq-classifier=src-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Eagle-local-Download pcq-classifier=dst-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Eagle-Upload pcq-classifier=src-address pcq-rate=24M pcq-total-limit=4G
+add kind=pcq name=Eagle-Download pcq-classifier=dst-address pcq-rate=24M pcq-total-limit=4G
+add kind=pcq name=Hawk-local-Upload pcq-classifier=src-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Hawk-local-Download pcq-classifier=dst-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Hawk-Upload pcq-classifier=src-address pcq-rate=27M pcq-total-limit=4G
+add kind=pcq name=Hawk-Download pcq-classifier=dst-address pcq-rate=27M pcq-total-limit=4G
+add kind=pcq name=Falcon-local-Upload pcq-classifier=src-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Falcon-local-Download pcq-classifier=dst-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Falcon-Upload pcq-classifier=src-address pcq-rate=32M pcq-total-limit=4G
+add kind=pcq name=Falcon-Download pcq-classifier=dst-address pcq-rate=32M pcq-total-limit=4G
+add kind=pcq name=Cheetah_Plus-local-Upload pcq-classifier=src-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Cheetah_Plus-local-Download pcq-classifier=dst-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Cheetah_Plus-Upload pcq-classifier=src-address pcq-rate=22M pcq-total-limit=4G
+add kind=pcq name=Cheetah_Plus-Download pcq-classifier=dst-address pcq-rate=22M pcq-total-limit=4G
+add kind=pcq name=Eagle_Plus-local-Upload pcq-classifier=src-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Eagle_Plus-local-Download pcq-classifier=dst-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Eagle_Plus-Upload pcq-classifier=src-address pcq-rate=27M pcq-total-limit=4G
+add kind=pcq name=Eagle_Plus-Download pcq-classifier=dst-address pcq-rate=27M pcq-total-limit=4G
+add kind=pcq name=Hawk_Plus-local-Upload pcq-classifier=src-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Hawk_Plus-local-Download pcq-classifier=dst-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Hawk_Plus-Upload pcq-classifier=src-address pcq-rate=32M pcq-total-limit=4G
+add kind=pcq name=Hawk_Plus-Download pcq-classifier=dst-address pcq-rate=32M pcq-total-limit=4G
+add kind=pcq name=Falcon_Plus-local-Upload pcq-classifier=src-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Falcon_Plus-local-Download pcq-classifier=dst-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Falcon_Plus-Upload pcq-classifier=src-address pcq-rate=35M pcq-total-limit=4G
+add kind=pcq name=Falcon_Plus-Download pcq-classifier=dst-address pcq-rate=35M pcq-total-limit=4G
+add kind=pcq name=Youth_Plus_Up_Booster-local-Upload pcq-classifier=src-address pcq-rate=25M pcq-total-limit=4G
+add kind=pcq name=Youth_Plus_Up_Booster-local-Download pcq-classifier=dst-address pcq-rate=20M pcq-total-limit=4G
+add kind=pcq name=Youth_Plus_Up_Booster-Upload pcq-classifier=src-address pcq-rate=19M pcq-total-limit=4G
+add kind=pcq name=Youth_Plus_Up_Booster-Download pcq-classifier=dst-address pcq-rate=9M pcq-total-limit=4G
+add kind=pcq name=Surfer_Plus_Up_Booster-local-Upload pcq-classifier=src-address pcq-rate=25M pcq-total-limit=4G
+add kind=pcq name=Surfer_Plus_Up_Booster-local-Download pcq-classifier=dst-address pcq-rate=20M pcq-total-limit=4G
+add kind=pcq name=Surfer_Plus_Up_Booster-Upload pcq-classifier=src-address pcq-rate=20M pcq-total-limit=4G
+add kind=pcq name=Surfer_Plus_Up_Booster-Download pcq-classifier=dst-address pcq-rate=10M pcq-total-limit=4G
+add kind=pcq name=Cheetah_Plus_Up_Booster-local-Upload pcq-classifier=src-address pcq-rate=55M pcq-total-limit=4G
+add kind=pcq name=Cheetah_Plus_Up_Booster-local-Download pcq-classifier=dst-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Cheetah_Plus_Up_Booster-Upload pcq-classifier=src-address pcq-rate=30M pcq-total-limit=4G
+add kind=pcq name=Cheetah_Plus_Up_Booster-Download pcq-classifier=dst-address pcq-rate=20M pcq-total-limit=4G
+add kind=pcq name=Eagle_Plus_Up_Booster-local-Upload pcq-classifier=src-address pcq-rate=55M pcq-total-limit=4G
+add kind=pcq name=Eagle_Plus_Up_Booster-local-Download pcq-classifier=dst-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Eagle_Plus_Up_Booster-Upload pcq-classifier=src-address pcq-rate=35M pcq-total-limit=4G
+add kind=pcq name=Eagle_Plus_Up_Booster-Download pcq-classifier=dst-address pcq-rate=25M pcq-total-limit=4G
+add kind=pcq name=Hawk_Plus_Up_Booster-local-Upload pcq-classifier=src-address pcq-rate=55M pcq-total-limit=4G
+add kind=pcq name=Hawk_Plus_Up_Booster-local-Download pcq-classifier=dst-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Hawk_Plus_Up_Booster-Upload pcq-classifier=src-address pcq-rate=40M pcq-total-limit=4G
+add kind=pcq name=Hawk_Plus_Up_Booster-Download pcq-classifier=dst-address pcq-rate=30M pcq-total-limit=4G
+add kind=pcq name=Falcon_Plus_Up_Booster-local-Upload pcq-classifier=src-address pcq-rate=55M pcq-total-limit=4G
+add kind=pcq name=Falcon_Plus_Up_Booster-local-Download pcq-classifier=dst-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Falcon_Plus_Up_Booster-Upload pcq-classifier=src-address pcq-rate=45M pcq-total-limit=4G
+add kind=pcq name=Falcon_Plus_Up_Booster-Download pcq-classifier=dst-address pcq-rate=35M pcq-total-limit=4G
+add kind=pcq name=Swift-local-Upload pcq-classifier=src-address pcq-rate=100M pcq-total-limit=4G
+add kind=pcq name=Swift-local-Download pcq-classifier=dst-address pcq-rate=100M pcq-total-limit=4G
+add kind=pcq name=Swift-Upload pcq-classifier=src-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Swift-Download pcq-classifier=dst-address pcq-rate=50M pcq-total-limit=4G
+add kind=pcq name=Extreme-local-Upload pcq-classifier=src-address pcq-rate=100M pcq-total-limit=4G
+add kind=pcq name=Extreme-local-Download pcq-classifier=dst-address pcq-rate=100M pcq-total-limit=4G
+add kind=pcq name=Extreme-Upload pcq-classifier=src-address pcq-rate=100M pcq-total-limit=4G
+add kind=pcq name=Extreme-Download pcq-classifier=dst-address pcq-rate=100M pcq-total-limit=4G
+
+
+/queue simple
+add max-limit=4G/4G name=Starter-local packet-marks=Starter-local queue=Starter-local-Upload/Starter-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Starter-global packet-marks=Starter-global queue=Starter-Upload/Starter-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Simple-local packet-marks=Simple-local queue=Simple-local-Upload/Simple-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Simple-global packet-marks=Simple-global queue=Simple-Upload/Simple-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=YOUTHPACK-local packet-marks=YOUTHPACK-local queue=YOUTHPACK-local-Upload/YOUTHPACK-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=YOUTHPACK-global packet-marks=YOUTHPACK-global queue=YOUTHPACK-Upload/YOUTHPACK-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=YOUTH_PLUS-local packet-marks=YOUTH_PLUS-local queue=YOUTH_PLUS-local-Upload/YOUTH_PLUS-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=YOUTH_PLUS-global packet-marks=YOUTH_PLUS-global queue=YOUTH_PLUS-Upload/YOUTH_PLUS-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=SURFER_PLUS-local packet-marks=SURFER_PLUS-local queue=SURFER_PLUS-local-Upload/SURFER_PLUS-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=SURFER_PLUS-global packet-marks=SURFER_PLUS-global queue=SURFER_PLUS-Upload/SURFER_PLUS-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Chaser-local packet-marks=Chaser-local queue=Chaser-local-Upload/Chaser-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Chaser-global packet-marks=Chaser-global queue=Chaser-Upload/Chaser-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Cheetah-local packet-marks=Cheetah-local queue=Cheetah-local-Upload/Cheetah-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Cheetah-global packet-marks=Cheetah-global queue=Cheetah-Upload/Cheetah-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=FREELANCER-local packet-marks=FREELANCER-local queue=FREELANCER-local-Upload/FREELANCER-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=FREELANCER-global packet-marks=FREELANCER-global queue=FREELANCER-Upload/FREELANCER-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Eagle-local packet-marks=Eagle-local queue=Eagle-local-Upload/Eagle-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Eagle-global packet-marks=Eagle-global queue=Eagle-Upload/Eagle-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Hawk-local packet-marks=Hawk-local queue=Hawk-local-Upload/Hawk-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Hawk-global packet-marks=Hawk-global queue=Hawk-Upload/Hawk-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Falcon-local packet-marks=Falcon-local queue=Falcon-local-Upload/Falcon-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Falcon-global packet-marks=Falcon-global queue=Falcon-Upload/Falcon-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Cheetah_Plus-local packet-marks=Cheetah_Plus-local queue=Cheetah_Plus-local-Upload/Cheetah_Plus-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Cheetah_Plus-global packet-marks=Cheetah_Plus-global queue=Cheetah_Plus-Upload/Cheetah_Plus-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Eagle_Plus-local packet-marks=Eagle_Plus-local queue=Eagle_Plus-local-Upload/Eagle_Plus-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Eagle_Plus-global packet-marks=Eagle_Plus-global queue=Eagle_Plus-Upload/Eagle_Plus-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Hawk_Plus-local packet-marks=Hawk_Plus-local queue=Hawk_Plus-local-Upload/Hawk_Plus-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Hawk_Plus-global packet-marks=Hawk_Plus-global queue=Hawk_Plus-Upload/Hawk_Plus-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Falcon_Plus-local packet-marks=Falcon_Plus-local queue=Falcon_Plus-local-Upload/Falcon_Plus-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Falcon_Plus-global packet-marks=Falcon_Plus-global queue=Falcon_Plus-Upload/Falcon_Plus-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Youth_Plus_Up_Booster-local packet-marks=Youth_Plus_Up_Booster-local queue=Youth_Plus_Up_Booster-local-Upload/Youth_Plus_Up_Booster-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Youth_Plus_Up_Booster-global packet-marks=Youth_Plus_Up_Booster-global queue=Youth_Plus_Up_Booster-Upload/Youth_Plus_Up_Booster-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Surfer_Plus_Up_Booster-local packet-marks=Surfer_Plus_Up_Booster-local queue=Surfer_Plus_Up_Booster-local-Upload/Surfer_Plus_Up_Booster-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Surfer_Plus_Up_Booster-global packet-marks=Surfer_Plus_Up_Booster-global queue=Surfer_Plus_Up_Booster-Upload/Surfer_Plus_Up_Booster-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Cheetah_Plus_Up_Booster-local packet-marks=Cheetah_Plus_Up_Booster-local queue=Cheetah_Plus_Up_Booster-local-Upload/Cheetah_Plus_Up_Booster-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Cheetah_Plus_Up_Booster-global packet-marks=Cheetah_Plus_Up_Booster-global queue=Cheetah_Plus_Up_Booster-Upload/Cheetah_Plus_Up_Booster-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Eagle_Plus_Up_Booster-local packet-marks=Eagle_Plus_Up_Booster-local queue=Eagle_Plus_Up_Booster-local-Upload/Eagle_Plus_Up_Booster-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Eagle_Plus_Up_Booster-global packet-marks=Eagle_Plus_Up_Booster-global queue=Eagle_Plus_Up_Booster-Upload/Eagle_Plus_Up_Booster-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Hawk_Plus_Up_Booster-local packet-marks=Hawk_Plus_Up_Booster-local queue=Hawk_Plus_Up_Booster-local-Upload/Hawk_Plus_Up_Booster-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Hawk_Plus_Up_Booster-global packet-marks=Hawk_Plus_Up_Booster-global queue=Hawk_Plus_Up_Booster-Upload/Hawk_Plus_Up_Booster-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Falcon_Plus_Up_Booster-local packet-marks=Falcon_Plus_Up_Booster-local queue=Falcon_Plus_Up_Booster-local-Upload/Falcon_Plus_Up_Booster-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Falcon_Plus_Up_Booster-global packet-marks=Falcon_Plus_Up_Booster-global queue=Falcon_Plus_Up_Booster-Upload/Falcon_Plus_Up_Booster-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Swift-local packet-marks=Swift-local queue=Swift-local-Upload/Swift-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Swift-global packet-marks=Swift-global queue=Swift-Upload/Swift-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Extreme-local packet-marks=Extreme-local queue=Extreme-local-Upload/Extreme-local-Download target=10.160.0.0/12,10.176.0.0/14
+add max-limit=4G/4G name=Extreme-global packet-marks=Extreme-global queue=Extreme-Upload/Extreme-Download target=10.160.0.0/12,10.176.0.0/14
+
+
+
+/ip firewall address-list
+add address=208.67.222.222 list=dns
+add address=208.67.220.220 list=dns
+add address=1.1.1.1 list=dns
+add address=1.0.0.1 list=dns
+add address=8.8.8.8 list=dns
+add address=8.8.4.4 list=dns
+add address=8.26.56.26 list=dns
+add address=8.20.247.20 list=dns
+add address=9.9.9.9 list=dns
+add address=149.112.112.112 list=dns
+add address=64.6.64.6 list=dns
+add address=64.6.65.6 list=dns
+add address=156.154.70.5 list=dns
+add address=156.154.71.5 list=dns
+add address=199.85.126.10 list=dns
+add address=199.85.127.10 list=dns
+add address=195.46.39.39 list=dns
+add address=195.46.39.40 list=dns
+add address=77.88.8.8 list=dns
+add address=77.88.8.1 list=dns
+add address=123.200.0.254 list=dns
+add address=203.76.96.5 list=dns
+add address=203.76.96.58 list=dns
+add address=203.76.96.59 list=dns
+
+/ip firewall filter
+add action=accept chain=forward connection-state=established,related
+add action=accept chain=input protocol=icmp
+add action=accept chain=output protocol=icmp
+add action=drop chain=forward comment=DNS dst-address-list=!dns dst-port=53 protocol=udp
+add action=accept chain=input dst-port=1723 protocol=tcp src-address=203.76.96.0/19
+add action=accept chain=input dst-port=47 protocol=tcp src-address=203.76.96.0/19
+add action=drop chain=input dst-port=1723 protocol=tcp
+add action=drop chain=input dst-port=47 protocol=tcp
+add action=accept chain=forward dst-address=203.76.96.85
+add action=accept chain=forward dst-address=203.76.97.60
+add action=accept chain=forward dst-address=203.76.96.90
+add action=accept chain=forward dst-address=203.76.96.88
+add action=accept chain=forward dst-address=203.76.96.86
+add action=accept chain=forward src-address-list=Starter
+add action=accept chain=forward src-address-list=Simple
+add action=accept chain=forward src-address-list=YOUTHPACK
+add action=accept chain=forward src-address-list=YOUTH_PLUS
+add action=accept chain=forward src-address-list=SURFER_PLUS
+add action=accept chain=forward src-address-list=Chaser
+add action=accept chain=forward src-address-list=Cheetah
+add action=accept chain=forward src-address-list=FREELANCER
+add action=accept chain=forward src-address-list=Eagle
+add action=accept chain=forward src-address-list=Hawk
+add action=accept chain=forward src-address-list=Falcon
+add action=accept chain=forward src-address-list=Cheetah_Plus
+add action=accept chain=forward src-address-list=Eagle_Plus
+add action=accept chain=forward src-address-list=Hawk_Plus
+add action=accept chain=forward src-address-list=Falcon_Plus
+add action=accept chain=forward src-address-list=Youth_Plus_Up_Booster
+add action=accept chain=forward src-address-list=Surfer_Plus_Up_Booster
+add action=accept chain=forward src-address-list=Cheetah_Plus_Up_Booster
+add action=accept chain=forward src-address-list=Eagle_Plus_Up_Booster
+add action=accept chain=forward src-address-list=Hawk_Plus_Up_Booster
+add action=accept chain=forward src-address-list=Falcon_Plus_Up_Booster
+add action=accept chain=forward src-address-list=Swift
+add action=accept chain=forward src-address-list=Extreme
+add action=accept chain=forward protocol=icmp src-address-list=Block
+add action=accept chain=forward dst-port=80 protocol=tcp src-address-list=Block
+add action=drop chain=forward src-address-list=Block
+add chain=forward src-address=10.160.0.0/28
+add action=drop chain=forward src-address=10.160.0.0/12
+add action=drop chain=forward src-address=10.176.0.0/14

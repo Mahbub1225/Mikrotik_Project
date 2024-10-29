@@ -1,0 +1,75 @@
+
+
+DIGHAPOTI_NATORE_BTS_DIST_BRAS_01
+
+
+
+/ip route rule
+add src-address=10.160.0.0/12 table=local
+add src-address=10.176.0.0/14 table=local
+
+
+/system clock manual
+set time-zone=+06:00
+
+/system ntp client
+set enabled=yes primary-ntp=203.76.96.95
+
+/snmp community
+add addresses=203.76.96.0/24 authentication-password=link3infra name=link3
+add addresses=203.76.96.0/24 name=link3!nfra
+
+/snmp
+set contact=Link3 enabled=yes location=DIGHAPOTI_NATORE_BTS_DIST_BRAS_01 trap-community=link3 trap-version=2
+
+
+
+/system scheduler
+add interval=1w name=e-mail-backup on-event=e-mail-backup policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive start-date=jun/30/2016 start-time=13:20:00
+add interval=1w name=email_backup on-event=\
+    "/export file=DIGHAPOTI_NATORE_BTS_DIST_BRAS_01\r\
+    \n/tool e-mail send to=\"mikrotik.backup@link3.net\" subject=\"DIGHAPOTI_NATORE_BTS_DIST_BRAS_01\" file=DIGHAPOTI_NATORE_BTS_DIST_BRAS_01.rsc\r\
+    \n" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=jun/01/2021 start-time=10:53:36
+
+
+
+
+
+/system script
+add dont-require-permissions=no name=e-mail-backup owner=admin policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive source="/system backup save name=email;\
+    \n/tool e-mail send to=\"mikrotik.backup@link3.net\" subject=([/system identity get name].\" backup\") file=email.backup;\
+    \n:log info \"Backup e-mail sent.\";  "
+add dont-require-permissions=no name=Block-remove owner=admin policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=":local addresstoremove\r\
+    \n:local blockaddress\r\
+    \n:foreach blockaddress in=[/ip firewall address-list find list=\"Block\"] do={\r\
+    \n\t:set addresstoremove [/ip firewall address-list get \$blockaddress address]\r\
+    \n\t/ip firewall address-list remove [find address=\$addresstoremove]\r\
+    \n\t/ip dhcp-server lease remove [find address=\$addresstoremove]\r\
+    \n\t}"
+
+/tool e-mail
+set address=123.200.0.4 from=mikrotik.backup@link3.net
+
+/system logging action
+add name=action1 remote=27.147.192.218 remote-port=1670 src-address=10.20.231.48 target=remote
+/system logging
+add action=action1 topics=info
+
+
+/ip pool
+add name=PPTP-POOL ranges=10.160.0.2-10.160.0.13
+
+/ppp profile
+add local-address=10.160.0.1 name=PPTP-PROFILE rate-limit=2048k/2048k remote-address=PPTP-POOL
+
+/ppp secret
+add name=link3 password=link3@nmc profile=PPTP-PROFILE service=pptp
+
+
+/interface pptp-server server
+set enabled=yes
+
+/ip firewall filter
+add chain=forward src-address=10.160.0.0/28
+add action=accept chain=forward src-address=10.160.0.0/28
+
